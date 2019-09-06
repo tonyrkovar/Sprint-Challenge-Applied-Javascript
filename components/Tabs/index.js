@@ -12,17 +12,19 @@ const titleParent = document.querySelector('.topics')
 
 axios.get('https://lambda-times-backend.herokuapp.com/topics')
     .then(res => {
-        console.log(res);
+        // console.log(res);
         res.data.topics.forEach( (title) => {
-            titleCard = document.createElement('tab');
+           const titleCard = document.createElement('tab');
             titleCard.classList.add('tab')
             titleParent.appendChild(titleCard);
             titleCard.textContent = `${title}`
+
+            titleCard.addEventListener( 'click', e => {
+                titleCard.classList.toggle('active-tab')
+            })
 
             return titleCard;
         })
     })
 
-    titleCard.addEventListener( 'click', e => {
-        titleCard.classList.toggle('active-tab')
-    })
+    
