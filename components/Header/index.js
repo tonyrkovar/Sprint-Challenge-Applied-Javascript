@@ -33,7 +33,7 @@ function Header() {
     headContainer.appendChild(temp);
 
     // setting content
-    dateSpot.textContent = `SMARCH 287, 2019`;
+    dateSpot.textContent = `SMARCH 28, 2019`;
     title.textContent = `Lambda Times`;
     temp.textContent = `98°`;
 

@@ -7,3 +7,22 @@
 //
 //  The tab component should look like this:
 //    <div class="tab">topic here</div>
+
+const titleParent = document.querySelector('.topics')
+
+axios.get('https://lambda-times-backend.herokuapp.com/topics')
+    .then(res => {
+        console.log(res);
+        res.data.topics.forEach( (title) => {
+            titleCard = document.createElement('tab');
+            titleCard.classList.add('tab')
+            titleParent.appendChild(titleCard);
+            titleCard.textContent = `${title}`
+
+            return titleCard;
+        })
+    })
+
+    titleCard.addEventListener( 'click', e => {
+        titleCard.classList.toggle('active-tab')
+    })
