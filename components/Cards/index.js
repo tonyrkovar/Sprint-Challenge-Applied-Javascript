@@ -22,24 +22,20 @@ const cardParent = document.querySelector('.cards-container')
 
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
     .then( res => {
+        console.log(res.data.articles)
         res.data.articles.javascript.forEach( e => {
-            console.log(res)
             cardParent.appendChild(cardPlaceHolder(e))
         })
         res.data.articles.bootstrap.forEach( e => {
-            console.log(res)
             cardParent.appendChild(cardPlaceHolder(e))
         })
         res.data.articles.node.forEach( e => {
-            console.log(res)
             cardParent.appendChild(cardPlaceHolder(e))
         })
         res.data.articles.technology.forEach( e => {
-            console.log(res)
             cardParent.appendChild(cardPlaceHolder(e))
         })
         res.data.articles.jquery.forEach( e => {
-            console.log(res)
             cardParent.appendChild(cardPlaceHolder(e))
         })
     })
